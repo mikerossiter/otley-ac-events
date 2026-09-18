@@ -85,6 +85,9 @@ body{
   padding:24px 16px 48px;
 }
 h1{font-size:1.5rem;line-height:1.25;margin:0 0 6px}
+.page-header{display:flex;align-items:center;gap:14px;margin:0 0 6px}
+.page-header h1{margin:0}
+.logo{width:64px;height:auto;flex:0 0 auto;border-radius:8px}
 .intro{margin:0 0 20px;color:var(--muted)}
 h2{font-size:1.05rem;margin:28px 0 12px;letter-spacing:.01em}
 
@@ -411,6 +414,12 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color
     return a;
   }
 
+  // OpenStreetMap's search can't find full addresses, but it finds UK postcodes on their own.
+  function mapQuery(venue) {
+    var postcode = venue.match(/\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b/i);
+    return postcode ? postcode[0] : venue;
+  }
+
   function deadlineBadge(ev, today) {
     if (!ev.entryDeadlineDate) { return null; }
     if (daysBetween(today, ev.date) < 0) { return null; }   // race already run
@@ -456,7 +465,7 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color
       actions.appendChild(calBtn);
     }
     if (ev.venue) {
-      actions.appendChild(externalLink('Map', 'https://www.openstreetmap.org/search?query=' + encodeURIComponent(ev.venue), false));
+      actions.appendChild(externalLink('Map', 'https://www.openstreetmap.org/search?query=' + encodeURIComponent(mapQuery(ev.venue)), false));
     }
     if (ev.link) {
       actions.appendChild(externalLink('Entry / details', ev.link, false));
@@ -555,7 +564,15 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color
     var app = document.getElementById('app');
     while (app.firstChild) { app.removeChild(app.firstChild); }
 
-    app.appendChild(el('h1', null, clubName));
+    var header = el('div', 'page-header');
+    var logo = el('img', 'logo');
+    logo.src = 'OtleyAC.jpg';
+    logo.alt = 'Otley Athletic Club logo';
+    logo.width = 384;
+    logo.height = 393;
+    header.appendChild(logo);
+    header.appendChild(el('h1', null, clubName));
+    app.appendChild(header);
     if (str(data.intro)) { app.appendChild(el('p', 'intro', str(data.intro))); }
 
     if (upcoming.length) {
