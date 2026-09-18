@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Junior races</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f6f6f3;
+  --surface:#ffffff;
+  --text:#191b1d;
+  --muted:#54585e;
+  --border:#e2e2dc;
+  --accent:#0d5c3c;
+  --accent-text:#ffffff;
+  --chip-bg:#edf0ed;
+  --chip-text:#22262a;
+  --next-border:#0d5c3c;
+  --next-tint:#f2f8f4;
+  --ok-bg:#e2f0e9; --ok-text:#124c2d;
+  --warn-bg:#fbedd0; --warn-text:#74430a;
+  --closed-bg:#eaeae7; --closed-text:#4c5055;
+  --btn-bg:#ffffff; --btn-text:#1d2024; --btn-border:#cbcec9;
+  --banner-bg:#0d5c3c; --banner-text:#f2faf6;
+  --focus:#0d5c3c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#121417;
+    --surface:#1b1e22;
+    --text:#ecedef;
+    --muted:#a9afb7;
+    --border:#2d3238;
+    --accent:#7fd8a8;
+    --accent-text:#0c2118;
+    --chip-bg:#262b31;
+    --chip-text:#e6e9ec;
+    --next-border:#7fd8a8;
+    --next-tint:#18231d;
+    --ok-bg:#16301f; --ok-text:#a8e6c1;
+    --warn-bg:#3a2b12; --warn-text:#f3ce85;
+    --closed-bg:#24282d; --closed-text:#a3a9b1;
+    --btn-bg:#22262b; --btn-text:#e7eaed; --btn-border:#3a4049;
+    --banner-bg:#1d3b2c; --banner-text:#dbf3e6;
+    --focus:#7fd8a8;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#121417;
+  --surface:#1b1e22;
+  --text:#ecedef;
+  --muted:#a9afb7;
+  --border:#2d3238;
+  --accent:#7fd8a8;
+  --accent-text:#0c2118;
+  --chip-bg:#262b31;
+  --chip-text:#e6e9ec;
+  --next-border:#7fd8a8;
+  --next-tint:#18231d;
+  --ok-bg:#16301f; --ok-text:#a8e6c1;
+  --warn-bg:#3a2b12; --warn-text:#f3ce85;
+  --closed-bg:#24282d; --closed-text:#a3a9b1;
+  --btn-bg:#22262b; --btn-text:#e7eaed; --btn-border:#3a4049;
+  --banner-bg:#1d3b2c; --banner-text:#dbf3e6;
+  --focus:#7fd8a8;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-size:16px;
+  line-height:1.5;
+}
+.wrap{
+  max-width:640px;
+  margin:0 auto;
+  padding:24px 16px 48px;
+}
+h1{font-size:1.5rem;line-height:1.25;margin:0 0 6px}
+.intro{margin:0 0 20px;color:var(--muted)}
+h2{font-size:1.05rem;margin:28px 0 12px;letter-spacing:.01em}
+
+.banner{
+  background:var(--banner-bg);
+  color:var(--banner-text);
+  border-radius:10px;
+  padding:12px 14px;
+  margin:0 0 20px;
+  font-size:.95rem;
+}
+.banner strong{font-weight:600}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  margin:0 0 12px;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.card.next{border:2px solid var(--next-border);background:var(--next-tint);padding:13px}
+
+.chip{
+  flex:0 0 auto;
+  width:56px;
+  text-align:center;
+  background:var(--chip-bg);
+  color:var(--chip-text);
+  border-radius:8px;
+  padding:6px 2px;
+  line-height:1.15;
+}
+.chip .d{display:block;font-size:1.35rem;font-weight:700}
+.chip .m{display:block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.chip .w{display:block;font-size:.72rem;margin-top:2px;color:var(--muted)}
+
+.body{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.name{font-size:1.05rem;font-weight:600;margin:0 0 6px;line-height:1.3}
+.meta{margin:0 0 2px;font-size:.9rem;color:var(--muted)}
+.meta .label{color:var(--muted);font-weight:600}
+.notes{margin:8px 0 0;font-size:.9rem}
+
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  padding:3px 9px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:600;
+}
+.badge.ok{background:var(--ok-bg);color:var(--ok-text)}
+.badge.warn{background:var(--warn-bg);color:var(--warn-text)}
+.badge.closed{background:var(--closed-bg);color:var(--closed-text)}
+
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{
+  display:inline-block;
+  padding:9px 12px;
+  border-radius:8px;
+  border:1px solid var(--btn-border);
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  font:inherit;
+  font-size:.875rem;
+  line-height:1.2;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.btn:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+details{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:4px 14px;
+  margin-top:8px;
+}
+summary{cursor:pointer;padding:10px 0;font-weight:600;font-size:.95rem}
+details .card{background:transparent;border:0;border-top:1px solid var(--border);border-radius:0;padding:14px 0;margin:0}
+details .card:first-of-type{border-top:0}
+
+.empty{color:var(--muted);margin:0 0 12px}
+.hidden-note{
+  margin:20px 0 0;
+  padding:10px 12px;
+  border-radius:8px;
+  background:var(--warn-bg);
+  color:var(--warn-text);
+  font-size:.875rem;
+}
+footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.875rem}
+
+.error-page h1{margin-bottom:12px}
+.error-page p{margin:0 0 12px}
+.error-page ol{margin:0 0 12px;padding-left:20px}
+.error-page li{margin-bottom:6px}
+.error-page .detail{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 12px;
+  font-size:.85rem;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+}
+.error-page a{color:var(--text)}
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+  <p class="empty">Loading races&hellip;</p>
+  <noscript><p class="empty">This page needs JavaScript switched on to show the race list.</p></noscript>
+</main>
+<script>
+(function () {
+  'use strict';
+
+  var MS_DAY = 86400000;
+  var MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var MONTH_LONG = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAY_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var DAY_LONG = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+  /* ---------- small helpers ---------- */
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) { n.className = cls; }
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    return n;
+  }
+
+  // Everything out of the JSON goes through this, so an object or a number
+  // can never end up printed as "[object Object]" or break the layout.
+  function str(v) {
+    if (v === null || v === undefined) { return ''; }
+    if (typeof v === 'string') { return v.trim(); }
+    if (typeof v === 'number' || typeof v === 'boolean') { return String(v); }
+    return '';
+  }
+
+  function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
+  /* ---------- dates ---------- */
+
+  // Parsed by hand on purpose. new Date("2026-10-10") is read as UTC and can
+  // show up as the 9th for anyone west of Greenwich.
+  function parseLocalDate(value) {
+    var s = str(value);
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+    if (!m) { return null; }
+    var y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
+    var dt = new Date(y, mo - 1, d);
+    if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== d) {
+      return null;   // catches things like 2026-02-30
+    }
+    dt.setHours(0, 0, 0, 0);
+    return dt;
+  }
+
+  function parseTime(value) {
+    var s = str(value);
+    var m = /^(\d{1,2}):(\d{2})$/.exec(s);
+    if (!m) { return null; }
+    var h = Number(m[1]), mi = Number(m[2]);
+    if (h > 23 || mi > 59) { return null; }
+    return { h: h, m: mi };
+  }
+
+  function todayMidnight() {
+    var d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  // Whole days between two local midnights. Math.round survives the clock
+  // changes in spring and autumn, when a day is 23 or 25 hours long.
+  function daysBetween(from, to) {
+    return Math.round((to.getTime() - from.getTime()) / MS_DAY);
+  }
+
+  function shortDate(d) { return d.getDate() + ' ' + MONTH_SHORT[d.getMonth()]; }
+  function longDate(d) {
+    return DAY_LONG[d.getDay()] + ' ' + d.getDate() + ' ' + MONTH_LONG[d.getMonth()] + ' ' + d.getFullYear();
+  }
+  function plural(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
+
+  /* ---------- calendar file (.ics) ---------- */
+
+  function icsEscape(s) {
+    return String(s)
+      .replace(/\\/g, '\\\\')
+      .replace(/;/g, '\;')
+      .replace(/,/g, '\\,')
+      .replace(/\r\n|\r|\n/g, '\\n');
+  }
+
+  // The calendar format allows at most 75 octets per line. Longer lines are
+  // split and the next line starts with a space, which counts towards its 75.
+  function foldLine(line) {
+    var encoder = (typeof TextEncoder !== 'undefined') ? new TextEncoder() : null;
+    function byteLength(ch) {
+      if (encoder) { return encoder.encode(ch).length; }
+      var code = ch.charCodeAt(0);
+      if (code < 0x80) { return 1; }
+      if (code < 0x800) { return 2; }
+      return 3;
+    }
+    var out = [], current = '', used = 0, i, ch, size, limit;
+    for (i = 0; i < line.length; i++) {
+      ch = line.charAt(i);
+      // keep surrogate pairs together
+      if (ch.charCodeAt(0) >= 0xD800 && ch.charCodeAt(0) <= 0xDBFF && i + 1 < line.length) {
+        ch += line.charAt(i + 1);
+        i++;
+      }
+      size = byteLength(ch);
+      limit = (out.length === 0) ? 75 : 74;
+      if (used + size > limit) {
+        out.push(current);
+        current = '';
+        used = 0;
+      }
+      current += ch;
+      used += size;
+    }
+    out.push(current);
+    return out.join('\r\n ');
+  }
+
+  function stampLocal(d) {
+    return d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate()) +
+      'T' + pad2(d.getHours()) + pad2(d.getMinutes()) + '00';
+  }
+  function stampDate(d) {
+    return d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate());
+  }
+  function stampUtc(d) {
+    return d.getUTCFullYear() + pad2(d.getUTCMonth() + 1) + pad2(d.getUTCDate()) +
+      'T' + pad2(d.getUTCHours()) + pad2(d.getUTCMinutes()) + pad2(d.getUTCSeconds()) + 'Z';
+  }
+
+  function slug(s) {
+    var out = String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    return out || 'race';
+  }
+
+  function buildIcs(ev, clubName) {
+    var lines = [];
+    var uid = slug(ev.name) + '-' + stampDate(ev.date) + '@otley-ac-events';
+    var description = [];
+    if (ev.distance) { description.push('Distance: ' + ev.distance); }
+    if (ev.ageGroups) { description.push('Age groups: ' + ev.ageGroups); }
+    if (ev.cost) { description.push('Cost: ' + ev.cost); }
+    if (ev.entryDeadlineDate) { description.push('Enter by: ' + shortDate(ev.entryDeadlineDate)); }
+    if (ev.notes) { description.push(ev.notes); }
+    if (ev.link) { description.push(ev.link); }
+
+    lines.push('BEGIN:VCALENDAR');
+    lines.push('VERSION:2.0');
+    lines.push('PRODID:-//' + (clubName || 'Running club') + '//Race list//EN');
+    lines.push('CALSCALE:GREGORIAN');
+    lines.push('METHOD:PUBLISH');
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:' + uid);
+    lines.push('DTSTAMP:' + stampUtc(new Date()));
+
+    if (ev.time) {
+      var start = new Date(ev.date.getTime());
+      start.setHours(ev.time.h, ev.time.m, 0, 0);
+      var end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
+      lines.push('DTSTART:' + stampLocal(start));
+      lines.push('DTEND:' + stampLocal(end));
+    } else {
+      var dayAfter = new Date(ev.date.getTime());
+      dayAfter.setDate(dayAfter.getDate() + 1);
+      lines.push('DTSTART;VALUE=DATE:' + stampDate(ev.date));
+      lines.push('DTEND;VALUE=DATE:' + stampDate(dayAfter));
+    }
+
+    lines.push('SUMMARY:' + icsEscape(ev.name));
+    if (ev.venue) { lines.push('LOCATION:' + icsEscape(ev.venue)); }
+    if (description.length) { lines.push('DESCRIPTION:' + icsEscape(description.join('\n'))); }
+    if (ev.link) { lines.push('URL:' + icsEscape(ev.link)); }
+    lines.push('END:VEVENT');
+    lines.push('END:VCALENDAR');
+
+    var folded = [], i;
+    for (i = 0; i < lines.length; i++) { folded.push(foldLine(lines[i])); }
+    return folded.join('\r\n') + '\r\n';
+  }
+
+  function downloadIcs(ev, clubName) {
+    var text = buildIcs(ev, clubName);
+    var blob = new Blob([text], { type: 'text/calendar;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = slug(ev.name) + '.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  /* ---------- building one race card ---------- */
+
+  function metaRow(label, value) {
+    var p = el('p', 'meta');
+    p.appendChild(el('span', 'label', label + ': '));
+    p.appendChild(document.createTextNode(value));
+    return p;
+  }
+
+  function externalLink(text, href, primary) {
+    var a = el('a', 'btn' + (primary ? ' primary' : ''), text);
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    return a;
+  }
+
+  function deadlineBadge(ev, today) {
+    if (!ev.entryDeadlineDate) { return null; }
+    if (daysBetween(today, ev.date) < 0) { return null; }   // race already run
+    var left = daysBetween(today, ev.entryDeadlineDate);
+    if (left < 0) {
+      return el('span', 'badge closed', 'Entries closed ' + shortDate(ev.entryDeadlineDate));
+    }
+    if (left === 0) {
+      return el('span', 'badge warn', 'Entries close today');
+    }
+    if (left <= 7) {
+      return el('span', 'badge warn', 'Entries close in ' + plural(left, 'day'));
+    }
+    return el('span', 'badge ok', 'Enter by ' + shortDate(ev.entryDeadlineDate));
+  }
+
+  function card(ev, today, opts) {
+    var wrap = el('div', 'card' + (opts.isNext ? ' next' : ''));
+
+    var chip = el('div', 'chip');
+    chip.appendChild(el('span', 'd', String(ev.date.getDate())));
+    chip.appendChild(el('span', 'm', MONTH_SHORT[ev.date.getMonth()]));
+    chip.appendChild(el('span', 'w', DAY_SHORT[ev.date.getDay()]));
+    wrap.appendChild(chip);
+
+    var body = el('div', 'body');
+    body.appendChild(el('h3', 'name', ev.name));
+    body.appendChild(metaRow('When', longDate(ev.date) + (ev.time ? ', ' + pad2(ev.time.h) + ':' + pad2(ev.time.m) : ' (all day)')));
+    if (ev.venue)     { body.appendChild(metaRow('Where', ev.venue)); }
+    if (ev.distance)  { body.appendChild(metaRow('Distance', ev.distance)); }
+    if (ev.ageGroups) { body.appendChild(metaRow('Ages', ev.ageGroups)); }
+    if (ev.cost)      { body.appendChild(metaRow('Cost', ev.cost)); }
+
+    var badge = deadlineBadge(ev, today);
+    if (badge) { body.appendChild(badge); }
+    if (ev.notes) { body.appendChild(el('p', 'notes', ev.notes)); }
+
+    var actions = el('div', 'actions');
+    if (opts.upcoming) {
+      var calBtn = el('button', 'btn primary', 'Add to my calendar');
+      calBtn.type = 'button';
+      calBtn.addEventListener('click', function () { downloadIcs(ev, opts.clubName); });
+      actions.appendChild(calBtn);
+    }
+    if (ev.venue) {
+      actions.appendChild(externalLink('Map', 'https://www.openstreetmap.org/search?query=' + encodeURIComponent(ev.venue), false));
+    }
+    if (ev.link) {
+      actions.appendChild(externalLink('Entry / details', ev.link, false));
+    }
+    if (actions.childNodes.length) { body.appendChild(actions); }
+
+    wrap.appendChild(body);
+    return wrap;
+  }
+
+  /* ---------- the friendly error page ---------- */
+
+  function fatal(what, detail) {
+    document.title = 'Problem with the race list';
+    var body = document.body;
+    while (body.firstChild) { body.removeChild(body.firstChild); }
+
+    var wrap = el('main', 'wrap error-page');
+    wrap.appendChild(el('h1', null, 'The race list could not be read'));
+    wrap.appendChild(el('p', null, what));
+    wrap.appendChild(el('p', null, 'This is almost always a missing comma or a missing quote mark in the events.json file. The page itself is fine.'));
+
+    var steps = el('ol');
+    var li1 = el('li');
+    li1.appendChild(document.createTextNode('Open '));
+    var code = el('strong', null, 'events.json');
+    li1.appendChild(code);
+    li1.appendChild(document.createTextNode(' in GitHub and copy everything in it.'));
+    steps.appendChild(li1);
+
+    var li2 = el('li');
+    li2.appendChild(document.createTextNode('Paste it into '));
+    var a = el('a', null, 'jsonlint.com');
+    a.href = 'https://jsonlint.com';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    li2.appendChild(a);
+    li2.appendChild(document.createTextNode(' and press Validate. It will point at the line with the mistake.'));
+    steps.appendChild(li2);
+
+    steps.appendChild(el('li', null, 'Fix it, commit the change, then refresh this page.'));
+    steps.appendChild(el('li', null, 'If you are stuck, undo the last change in GitHub and the page will come back.'));
+    wrap.appendChild(steps);
+
+    if (detail) {
+      wrap.appendChild(el('p', 'detail', 'Detail, for whoever is helping: ' + detail));
+    }
+    body.appendChild(wrap);
+  }
+
+  /* ---------- the page ---------- */
+
+  function render(data) {
+    var clubName = str(data.clubName) || 'Junior races';
+    var today = todayMidnight();
+
+    var raw = data.events;
+    if (!raw || Object.prototype.toString.call(raw) !== '[object Array]') {
+      fatal('The file loaded, but there is no list of events inside it.',
+            'Expected a key called "events" holding a list, for example "events": [ ... ].');
+      return;
+    }
+
+    var upcoming = [], past = [], hidden = 0, i, item, date, name;
+
+    for (i = 0; i < raw.length; i++) {
+      item = raw[i];
+      if (!item || typeof item !== 'object') { hidden++; continue; }
+      name = str(item.name);
+      date = parseLocalDate(item.date);
+      if (!name || !date) { hidden++; continue; }
+
+      var ev = {
+        name: name,
+        date: date,
+        time: parseTime(item.time),
+        venue: str(item.venue),
+        distance: str(item.distance),
+        ageGroups: str(item.ageGroups),
+        cost: str(item.cost),
+        notes: str(item.notes),
+        entryDeadlineDate: parseLocalDate(item.entryDeadline),
+        link: ''
+      };
+      var link = str(item.link);
+      if (/^https?:\/\//i.test(link)) { ev.link = link; }
+
+      if (daysBetween(today, date) >= 0) { upcoming.push(ev); } else { past.push(ev); }
+    }
+
+    upcoming.sort(function (a, b) { return a.date - b.date; });
+    past.sort(function (a, b) { return b.date - a.date; });
+
+    document.title = clubName + ' — races';
+
+    var app = document.getElementById('app');
+    while (app.firstChild) { app.removeChild(app.firstChild); }
+
+    app.appendChild(el('h1', null, clubName));
+    if (str(data.intro)) { app.appendChild(el('p', 'intro', str(data.intro))); }
+
+    if (upcoming.length) {
+      var next = upcoming[0];
+      var away = daysBetween(today, next.date);
+      var banner = el('p', 'banner');
+      banner.appendChild(el('strong', null, 'Next up: ' + next.name));
+      banner.appendChild(document.createTextNode(away === 0 ? ' — today!' : ' — in ' + plural(away, 'day')));
+      app.appendChild(banner);
+    }
+
+    app.appendChild(el('h2', null, 'Coming up'));
+    if (upcoming.length) {
+      for (i = 0; i < upcoming.length; i++) {
+        app.appendChild(card(upcoming[i], today, { upcoming: true, isNext: i === 0, clubName: clubName }));
+      }
+    } else {
+      app.appendChild(el('p', 'empty', 'No races on the list at the moment. Check back soon.'));
+    }
+
+    if (past.length) {
+      var details = document.createElement('details');
+      details.appendChild(el('summary', null, 'Past events (' + past.length + ')'));
+      for (i = 0; i < past.length; i++) {
+        details.appendChild(card(past[i], today, { upcoming: false, isNext: false, clubName: clubName }));
+      }
+      app.appendChild(details);
+    }
+
+    if (hidden > 0) {
+      app.appendChild(el('p', 'hidden-note',
+        plural(hidden, 'event') + ' hidden — each event needs a "name", and the "date" must look like 2026-10-10.'));
+    }
+
+    var footer = el('footer');
+    footer.appendChild(el('p', null, str(data.contact) || 'Ask a coach if anything here looks wrong.'));
+    app.appendChild(footer);
+  }
+
+  /* ---------- load ---------- */
+
+  fetch('events.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error('The events.json file could not be downloaded. The server replied with code ' + res.status + '.');
+      }
+      return res.text();
+    })
+    .then(function (text) {
+      var data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        fatal('The events.json file is there, but it is not written correctly.', e.message);
+        return;
+      }
+      if (!data || typeof data !== 'object') {
+        fatal('The events.json file is there, but it does not contain the expected information.', null);
+        return;
+      }
+      try {
+        render(data);
+      } catch (e) {
+        fatal('The race list could not be drawn on the page.', e.message);
+      }
+    })
+    .catch(function (e) {
+      fatal('The events.json file could not be loaded.',
+        (e && e.message ? e.message : 'Unknown problem.') +
+        ' If you are opening this page from your own computer, it needs to be served over http — see the README.');
+    });
+}());
+</script>
+</body>
+</html>
