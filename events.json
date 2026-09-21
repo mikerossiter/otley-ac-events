@@ -97,6 +97,62 @@
       "date": "2027-03-07",
       "venue": "Middleton Park, Leeds",
       "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+    },
+    {
+      "name": "West Yorkshire XC League - Race 1",
+      "date": "2026-10-11",
+      "time": "11:45",
+      "venue": "Cliff Castle, Keighley",
+      "distance": "2500m (U12) / 3500m (U14) / 4000m (U16 girls) / 5000m (U16 boys and U18 women) / 6500m (U18 men)",
+      "ageGroups": "U12, U14, U16 and U18, with separate races for boys and girls. Junior ages are taken as at 31 August 2027, so U12 runners must be born on or before 31 August 2017 - there is no U10 race",
+      "entryDeadline": "2026-10-04",
+      "cost": "£25, which covers all five meetings",
+      "link": "http://www.westyorkshireathletics.org.uk/wyxcl26index.htm",
+      "notes": "Meeting 1 of 5. Enter in advance through the SportSoft system linked from the league page - there are no entries on the day. One £25 fee covers the whole league. Entries for this first meeting close on 4 October; if you miss that, entries reopen afterwards for the remaining four. Every runner needs an up to date England Athletics registration. You collect a league number at this meeting - keep it for the rest of the season. Races start no earlier than: 11:45 U12 girls, 11:55 U12 boys, 12:05 U14 girls, 12:20 U14 boys, 12:40 U16 girls, 12:55 U16 boys, 13:00 U18 women, 13:20 U18 men."
+    },
+    {
+      "name": "West Yorkshire XC League - Race 2",
+      "date": "2026-11-14",
+      "time": "11:45",
+      "venue": "Thornes Park, Wakefield",
+      "distance": "2500m (U12) / 3500m (U14) / 4000m (U16 girls) / 5000m (U16 boys and U18 women) / 6500m (U18 men)",
+      "ageGroups": "U12, U14, U16 and U18, with separate races for boys and girls",
+      "cost": "£25 for the whole league, paid once",
+      "link": "http://www.westyorkshireathletics.org.uk/wyxcl26index.htm",
+      "notes": "Meeting 2 of 5, and a Saturday rather than a Sunday. Races start no earlier than: 11:45 U12 girls, 11:55 U12 boys, 12:05 U14 girls, 12:20 U14 boys, 12:40 U16 girls, 12:55 U16 boys, 13:00 U18 women, 13:20 U18 men. You need to run at least four of the five meetings to qualify for a league award."
+    },
+    {
+      "name": "West Yorkshire XC League - Race 3",
+      "date": "2026-12-05",
+      "time": "11:45",
+      "venue": "Middleton Park, Leeds",
+      "distance": "2500m (U12) / 3500m (U14) / 4000m (U16 girls) / 5000m (U16 boys and U18 women) / 6500m (U18 men)",
+      "ageGroups": "U12, U14, U16 and U18, with separate races for boys and girls",
+      "cost": "£25 for the whole league, paid once",
+      "link": "http://www.westyorkshireathletics.org.uk/wyxcl26index.htm",
+      "notes": "Meeting 3 of 5, and a Saturday rather than a Sunday. Races start no earlier than: 11:45 U12 girls, 11:55 U12 boys, 12:05 U14 girls, 12:20 U14 boys, 12:40 U16 girls, 12:55 U16 boys, 13:00 U18 women, 13:20 U18 men. You need to run at least four of the five meetings to qualify for a league award."
+    },
+    {
+      "name": "West Yorkshire XC League - Race 4",
+      "date": "2027-01-17",
+      "time": "11:45",
+      "venue": "Nunroyd Park, Guiseley",
+      "distance": "2500m (U12) / 3500m (U14) / 4000m (U16 girls) / 5000m (U16 boys and U18 women) / 6500m (U18 men)",
+      "ageGroups": "U12, U14, U16 and U18, with separate races for boys and girls",
+      "cost": "£25 for the whole league, paid once",
+      "link": "http://www.westyorkshireathletics.org.uk/wyxcl26index.htm",
+      "notes": "Meeting 4 of 5. Races start no earlier than: 11:45 U12 girls, 11:55 U12 boys, 12:05 U14 girls, 12:20 U14 boys, 12:40 U16 girls, 12:55 U16 boys, 13:00 U18 women, 13:20 U18 men. You need to run at least four of the five meetings to qualify for a league award."
+    },
+    {
+      "name": "West Yorkshire XC League - Race 5",
+      "date": "2027-02-14",
+      "time": "11:45",
+      "venue": "Oulton Sports Club, Rothwell",
+      "distance": "2500m (U12) / 3500m (U14) / 4000m (U16 girls) / 5000m (U16 boys and U18 women) / 6500m (U18 men)",
+      "ageGroups": "U12, U14, U16 and U18, with separate races for boys and girls",
+      "cost": "£25 for the whole league, paid once",
+      "link": "http://www.westyorkshireathletics.org.uk/wyxcl26index.htm",
+      "notes": "The last meeting of the league, and where the awards are handed out. Races start no earlier than: 11:45 U12 girls, 11:55 U12 boys, 12:05 U14 girls, 12:20 U14 boys, 12:40 U16 girls, 12:55 U16 boys, 13:00 U18 women, 13:20 U18 men. Prizes go to the first three in each age group, plus team awards - three to score in the junior age groups."
     }
   ]
 }
