@@ -46,8 +46,13 @@
     {
       "name": "PECO Cross Country - Race 1",
       "date": "2026-11-08",
-      "venue": "Temple Newsam, Leeds",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+      "time": "10:00",
+      "venue": "Temple Newsam Country Park, Leeds",
+      "distance": "1 mile at 10:00 (U10 and U12) / 2 miles at 10:20 (U14 and U17)",
+      "ageGroups": "U10 to U17 - age 6 to 15 on 1 September 2026, normally school years 2 to 11",
+      "cost": "£8 season ticket, online in advance only - covers all five races plus the relays and prize presentation",
+      "link": "https://racebest.com/races/8w7su",
+      "notes": "Entries are open. The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval. Race HQ and toilets are in The Courtyard at Temple Newsam; the start and finish are on the field in front of Temple Newsam House, about a five minute walk away. There is no water, no baggage store and no changing rooms. The race is capped at 700 entries."
     },
     {
       "name": "Leeds Relays",
@@ -70,33 +75,55 @@
     },
     {
       "name": "PECO Cross Country - Race 2",
-      "date": "2026-12-12",
-      "venue": "Pontefract Racecourse",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed. Note this one is listed as a Saturday when the rest of the league runs on Sundays, so it is worth double checking."
+      "date": "2026-12-13",
+      "time": "10:00",
+      "venue": "Pontefract Park, Pontefract",
+      "distance": "1 mile at 10:00 (U10 and U12) / 2 miles at 10:20 (U14 and U17)",
+      "ageGroups": "U10 to U17 - age 6 to 15 on 1 September 2026, normally school years 2 to 11",
+      "cost": "£8 season ticket, online in advance only - covers all five races plus the relays and prize presentation",
+      "link": "https://racebest.com/races",
+      "notes": "Corrected date - this is Sunday 13 December, not the 12th. The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval."
     },
     {
       "name": "PECO Cross Country - Race 3",
       "date": "2027-01-03",
+      "time": "10:00",
       "venue": "Middleton Park, Leeds",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+      "distance": "1 mile at 10:00 (U10 and U12) / 2 miles at 10:20 (U14 and U17)",
+      "ageGroups": "U10 to U17 - age 6 to 15 on 1 September 2026, normally school years 2 to 11",
+      "cost": "£8 season ticket, online in advance only - covers all five races plus the relays and prize presentation",
+      "link": "https://racebest.com/races",
+      "notes": "The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval."
     },
     {
       "name": "PECO Cross Country - Race 4",
       "date": "2027-01-31",
+      "time": "10:00",
       "venue": "West Park, Leeds",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+      "distance": "1 mile at 10:00 (U10 and U12) / 2 miles at 10:20 (U14 and U17)",
+      "ageGroups": "U10 to U17 - age 6 to 15 on 1 September 2026, normally school years 2 to 11",
+      "cost": "£6 if you join at race 4 - this covers races 4 and 5 plus the relays",
+      "link": "https://racebest.com/races",
+      "notes": "The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval."
     },
     {
       "name": "PECO Cross Country - Race 5",
       "date": "2027-02-21",
+      "time": "10:00",
       "venue": "Roundhay Park, Leeds",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+      "distance": "1 mile at 10:00 (U10 and U12) / 2 miles at 10:20 (U14 and U17)",
+      "ageGroups": "U10 to U17 - age 6 to 15 on 1 September 2026, normally school years 2 to 11",
+      "cost": "£3 if you join at race 5 - this covers race 5 plus the relays",
+      "link": "https://racebest.com/races",
+      "notes": "The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval."
     },
     {
       "name": "PECO Cross Country Relays",
       "date": "2027-03-07",
       "venue": "Middleton Park, Leeds",
-      "notes": "Provisional date and venue - PECO have not confirmed it yet. Start time to be confirmed."
+      "cost": "Included in the season ticket",
+      "link": "https://racebest.com/races",
+      "notes": "End of season relays and prize presentation, hosted by Rothwell Harriers. Free to anyone who has a PECO season ticket. Start time to be confirmed. Dates and venues are still subject to landowner approval."
     },
     {
       "name": "West Yorkshire XC League - Race 1",
