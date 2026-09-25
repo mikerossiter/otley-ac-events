@@ -107,6 +107,13 @@ What each line does:
 You do not need to put the races in date order. The page sorts them itself, and
 moves anything in the past into the **Past events** section at the bottom.
 
+### Clearing out old races
+
+Keep about two years of past races, then delete anything older. Each
+September, at the start of a new season, remove the races from two seasons ago.
+This keeps `events.json` short enough to edit safely. Deleted races are not
+lost — git still has every earlier version of the file if you need one back.
+
 ### If you were sent the details as a screenshot or a messy message
 
 Type the bits you can read into the block above and leave out the rest. A race
