@@ -578,9 +578,22 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color
     if (upcoming.length) {
       var next = upcoming[0];
       var away = daysBetween(today, next.date);
+      var when = away === 0 ? ' — today!' : ' — in ' + plural(away, 'day');
+      // Everything else on the same day as the next race, so the banner covers them all.
+      var sameDay = [];
+      for (i = 0; i < upcoming.length && daysBetween(next.date, upcoming[i].date) === 0; i++) {
+        sameDay.push(upcoming[i].name);
+      }
       var banner = el('p', 'banner');
-      banner.appendChild(el('strong', null, 'Next up: ' + next.name));
-      banner.appendChild(document.createTextNode(away === 0 ? ' — today!' : ' — in ' + plural(away, 'day')));
+      if (sameDay.length === 1) {
+        banner.appendChild(el('strong', null, 'Next up: ' + next.name));
+        banner.appendChild(document.createTextNode(when));
+      } else {
+        banner.appendChild(el('strong', null, 'Next up: ' + plural(sameDay.length, 'event') + ' on ' + longDate(next.date)));
+        banner.appendChild(document.createTextNode(when));
+        banner.appendChild(document.createElement('br'));
+        banner.appendChild(document.createTextNode(sameDay.slice(0, -1).join(', ') + ' and ' + sameDay[sameDay.length - 1]));
+      }
       app.appendChild(banner);
     }
 
