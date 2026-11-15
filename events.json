@@ -55,13 +55,25 @@
       "notes": "Entries are open. The two junior races go off before the senior race and are both chip timed. The 1 mile is at 10:00 for children aged 6 to 10 on 1 September 2026, and the 2 miles is at 10:20 for those aged 11 to 15. Prizes go to boys and girls in four groups - U10, U12, U14 and U17. There is no entry on the day - the only way in is to buy the season ticket online in advance, so enter early to be sure of a place. The price covers race fees, card charges and admin, with nothing else to pay. You collect a race number with a timing chip in it at the first race you go to, and keep the same number all season - turn up and run after that. A replacement costs £2.50 at Race HQ. You do not have to be a paid member of a running club, but you do need to name the club you are connected with. Only enter your child if you are confident they can run the distance; for the younger race, junior parkrun is a good guide. Dates and venues are still subject to landowner approval. Race HQ and toilets are in The Courtyard at Temple Newsam; the start and finish are on the field in front of Temple Newsam House, about a five minute walk away. There is no water, no baggage store and no changing rooms. The race is capped at 700 entries."
     },
     {
-      "name": "Leeds Relays",
+      "name": "Leeds Uni Junior XC",
       "date": "2026-11-21",
       "time": "11:00",
-      "venue": "West Park, Leeds, LS6 3NE",
-      "distance": "1 mile (U10 and U12) / 2 miles (U14 and U16) / relay teams of four with 2 mile legs (U18 and U20)",
-      "ageGroups": "U10, U12, U14, U16, U18, U20",
-      "notes": "Hosted by the University of Leeds Cross Country Society, who have invited the club - tell a coach if you would like to run. Registration closes at 10:30, half an hour before the first race. Junior start times: 11:00 U10 boys, 11:05 U10 girls, 11:20 U12 boys, 11:25 U12 girls, 11:40 U14 boys, 11:45 U14 girls, 12:20 U16 boys, 12:25 U16 girls. Boys and girls start together but are timed separately. U18 and U20 run in the relays with the seniors at 13:00 (women) and 14:00 (men and mixed)."
+      "venue": "West Park Field, West Park Grove, Leeds, LS6 3NE",
+      "distance": "1 mile (U10 and U12) / 2 miles (U14 and U16)",
+      "ageGroups": "U10, U12, U14, U16 - separate boys' and girls' races",
+      "cost": "£5",
+      "link": "https://in.njuko.com/leeds-uni-xc-relays-2026?currentPage=select-competition",
+      "notes": "A straight cross country race, not a relay - the relays on the same day are the senior event. Hosted by the University of Leeds Cross Country Society, who have invited the club - tell a coach if you would like to run. Enter online in advance; places are limited and only 21 were left on 15 November. Registration opens at 10:00 and closes at 10:30, half an hour before the first race. Junior start times: 11:00 U10 boys, 11:05 U10 girls, 11:20 U12 boys, 11:25 U12 girls, 11:40 U14 boys, 11:45 U14 girls, 12:20 U16 boys, 12:25 U16 girls. Boys and girls start together but are timed separately. Same day as BOFRA Litton Birks."
+    },
+    {
+      "name": "BOFRA - Litton Birks",
+      "date": "2026-11-21",
+      "time": "10:30",
+      "venue": "The Queens Arms, Litton, North Yorkshire, BD23 5QJ",
+      "ageGroups": "U9, U12, U14, U17 - age on 1 May 2026, minimum age 6 on the day",
+      "cost": "£3, entry on the day only",
+      "link": "https://www.fellrunner.org.uk/races/fd9416a2-55d0-475d-b127-97289a1219a0",
+      "notes": "A BOFRA fell race in the Yorkshire Dales. Junior races start from 10:30 and the senior race is not before 12:00. Juniors enter on the day only - registration at the Queens Arms opens at 9:30. Junior distances are not published. Parking on the day is in a field 300m from the start. Prizegiving is at the Queens Arms; if you want to eat at the pub, you must book ahead. Same day as the Leeds Uni Junior XC."
     },
     {
       "name": "Northern Athletics November Indoor Open",
