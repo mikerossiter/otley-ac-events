@@ -600,7 +600,7 @@ footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color
     app.appendChild(el('h2', null, 'Coming up'));
     if (upcoming.length) {
       for (i = 0; i < upcoming.length; i++) {
-        app.appendChild(card(upcoming[i], today, { upcoming: true, isNext: i === 0, clubName: clubName }));
+        app.appendChild(card(upcoming[i], today, { upcoming: true, isNext: daysBetween(upcoming[0].date, upcoming[i].date) === 0, clubName: clubName }));
       }
     } else {
       app.appendChild(el('p', 'empty', 'No races on the list at the moment. Check back soon.'));
